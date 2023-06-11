@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">CustomerApp</string>
+    <string name="register">Регистрация</string>
+    <string name="Enter_name">Введите имя</string>
+    <string name="enter_email">Введите email</string>
+    <string name="enter_password">Введите пароль</string>
+    <string name="submit">Отправить\n</string>
+    <string name="login_now">Войти сейчас\n</string>
+    <string name="Error_while_logging_in">Ошибка при входе</string>
+    <string name="login">Войти\n</string>
+    <string name="orders">Заказы</string>
+    <string name="cart">Корзина</string>
+    <string name="enter_address">"Введите адресс "</string>
 </resources>
