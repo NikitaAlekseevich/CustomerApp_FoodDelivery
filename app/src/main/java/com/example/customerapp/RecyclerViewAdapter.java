@@ -105,9 +105,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             public void onResponse(String response) {
                 v.setEnabled(true);
                 if (response.equals("success")) {
-                    Toast.makeText(context, "Operation success", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, "Успешно", Toast.LENGTH_SHORT).show();
                 } else
-                    Toast.makeText(context, "Operation failed", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, "Ошибка", Toast.LENGTH_SHORT).show();
             }
         }, new Response.ErrorListener() {
             @Override

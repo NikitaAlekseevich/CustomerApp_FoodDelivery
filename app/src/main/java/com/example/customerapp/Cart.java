@@ -26,7 +26,7 @@ public class Cart extends AppCompatActivity {
     TextView textViewCartData, textViewDisDur;
     SharedPreferences sharedPreferences;
     Button buttonConfirm, buttonRemove;
-    int pricePerKM = 5;
+    int pricePerKM = 10;
     String urlConfirm =
             "http://192.168.1.82/food-delivery-application/fooddeliveryapp/public/api/users/cart/confirm?user_email=";
     String urlRemove =
