@@ -11,4 +11,7 @@
     <string name="orders">Заказы</string>
     <string name="cart">Корзина</string>
     <string name="enter_address">"Введите адресс "</string>
+    <string name="confirm_order">Подтвердить заказ</string>
+    <string name="clear_cart">Очистить корзину</string>
+    <string name="adress_info">Введите полный адрес и номер телефона</string>
 </resources>

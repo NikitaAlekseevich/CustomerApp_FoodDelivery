@@ -1,16 +1,18 @@
 package com.example.customerapp;
 
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.content.pm.PackageManager;
-import android.os.Bundle;
-import android.view.View;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import android.Manifest;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -18,7 +20,6 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.customerapp.databinding.ActivityMainBinding;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -27,17 +28,19 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-    ActivityMainBinding binding;
+
     SharedPreferences sharedPreferences;
+    Button buttonCart, buttonAddress, buttonAllOrders;
     ArrayList<ListData> arrayList;
-    String apiURL = "http://192.168.0.107/food-delivery-application/fooddeliveryapp/public/api/products/list";
+    String apiURL = "http://192.168.1.82/food-delivery-application/fooddeliveryapp/public/api/products/list";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
-        View view = binding.getRoot();
-        setContentView(view);
+        setContentView(R.layout.activity_main);
         sharedPreferences = getSharedPreferences("CustomerApp", MODE_PRIVATE);
+        buttonCart = findViewById(R.id.btnCart);
+        buttonAddress = findViewById(R.id.btnSelectAddress);
+        buttonAllOrders = findViewById(R.id.btnAllOrders);
         checkPermissions();
         if (sharedPreferences.getString("login", "false").equals("false")) {
             Intent intent = new Intent(getApplicationContext(), Login.class);
@@ -47,7 +50,35 @@ public class MainActivity extends AppCompatActivity {
         arrayList = new ArrayList<>();
 
         fetchData();
+
+        buttonAllOrders.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), ListOrders.class);
+                startActivity(intent);
+            }
+        });
+
+        buttonAddress.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), AddressDetails.class);
+                startActivity(intent);
+            }
+        });
+
+        buttonCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), Cart.class);
+                startActivity(intent);
+            }
+        });
+
+
     }
+
+
 
     public void parseJSON(String data) {
         try {
@@ -70,6 +101,7 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
     }
+
 
 
     public void fetchData() {
@@ -98,7 +130,7 @@ public class MainActivity extends AppCompatActivity {
                         new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION}, 1);
             } else {
                 ActivityCompat.requestPermissions(MainActivity.this,
-                        new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION}, 1);
+                        new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
             }
         }
     }

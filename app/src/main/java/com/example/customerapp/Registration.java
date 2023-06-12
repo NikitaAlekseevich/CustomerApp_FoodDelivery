@@ -56,7 +56,7 @@ public class Registration extends AppCompatActivity {
                 email = editTextEmail.getText().toString();
                 password = editTextPassword.getText().toString();
 
-                String url = "http://192.168.0.107/food-delivery-application/fooddeliveryapp/public/api/users/register";
+                String url = "http://192.168.1.82/food-delivery-application/fooddeliveryapp/public/api/users/register";
 
                 RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
 

@@ -30,9 +30,9 @@ import java.util.ArrayList;
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
     ArrayList<ListData> listdata;
     Context context;
-    String removeUrl = "http://192.168.0.107/food-delivery-application/fooddeliveryapp/public/api/users/cart/remove";
+    String removeUrl = "http://192.168.1.82/food-delivery-application/fooddeliveryapp/public/api/users/cart/remove";
     // cmd -> config -> Ipv4
-    String addUrl = "http://192.168.0.107/food-delivery-application/fooddeliveryapp/public/api/users/cart/add";
+    String addUrl = "http://192.168.1.82/food-delivery-application/fooddeliveryapp/public/api/users/cart/add";
     // cmd -> config -> Ipv4
     SharedPreferences sharedPreferences;
 

@@ -66,7 +66,7 @@ public class Login extends AppCompatActivity {
                 password = editTextPassword.getText().toString();
 
                 RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
-                String url = "http://192.168.0.107/food-delivery-application/fooddeliveryapp/public/api/users/login";
+                String url = "http://192.168.1.82/food-delivery-application/fooddeliveryapp/public/api/users/login";
                 // cmd -> config -> Ipv4
 
                 StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
