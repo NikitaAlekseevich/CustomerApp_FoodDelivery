@@ -42,10 +42,10 @@ public class ListOrders extends AppCompatActivity {
                 String status = stu.getString("status");
                 String item_details = stu.getString("item_details");
                 JSONArray jsonArrayItem = new JSONArray(item_details);
-                textViewOrders.append("Order placed on: " + created_at + "\nStatus: " + status + "\n");
+                textViewOrders.append("Заказ сделан в: " + created_at + "\nСтаутус: " + status + "\n");
                 for (int j = 0; j < jsonArrayItem.length(); j++) {
                     JSONObject jsonObjectItem = jsonArrayItem.getJSONObject(j);
-                    textViewOrders.append("Items: \n" + jsonObjectItem.getString("name") + "\nPrice: "
+                    textViewOrders.append("Заказ: \n" + jsonObjectItem.getString("name") + "\nЦена: "
                             + jsonObjectItem.getString("price") + "\n");
                 }
                 textViewOrders.append("\n\n");

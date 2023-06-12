@@ -65,11 +65,11 @@ public class Cart extends AppCompatActivity {
             public void onResponse(String response) {
                 v.setEnabled(true);
                 if (response.equals("success")) {
-                    Toast.makeText(getApplicationContext(), "Operation success",
+                    Toast.makeText(getApplicationContext(), "Успешно",
                             Toast.LENGTH_SHORT).show();
                     finish();
                 } else
-                    Toast.makeText(getApplicationContext(), "Operation failed",
+                    Toast.makeText(getApplicationContext(), "Не удалось",
                             Toast.LENGTH_SHORT).show();
             }
         }, new Response.ErrorListener() {
@@ -94,13 +94,13 @@ public class Cart extends AppCompatActivity {
                 String des = stu.getString("description");
                 String numItem = stu.getString("numItem");
                 String price = stu.getString("price");
-                textViewCartData.append("Item: " + name + "\nPrice: " + price + "$\nNumber of Item: " + numItem + "\n\n");
+                textViewCartData.append("Заказ: " + name + "\nЦена: " + price + "₽\nКоличество: " + numItem + "\n\n");
             }
             String distance = String.valueOf(jsonObject.getInt("distance") / 1000);
             String duration = String.valueOf((jsonObject.getInt("duration") / 60));
             int total_price = Integer.parseInt(distance) * pricePerKM;
-            textViewDisDur.setText("Distance: " + distance + " KM\nDelivery Fee: "
-                    + total_price + " $" + "\nDuration: " + duration + "Minutes");
+            textViewDisDur.setText("Расстояние: " + distance + " КМ\nПлата за доставку: "
+                    + total_price + " ₽" + "\nВремя: " + duration + "минут");
         } catch (JSONException e) {
             Log.e("error", e.getLocalizedMessage());
             e.printStackTrace();

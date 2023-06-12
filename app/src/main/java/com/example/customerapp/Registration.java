@@ -65,7 +65,7 @@ public class Registration extends AppCompatActivity {
                             @Override
                             public void onResponse(String response) {
                                 if (response.equals("success")) {
-                                    Toast.makeText(getApplicationContext(), "Account created",
+                                    Toast.makeText(getApplicationContext(), "Аккаунт Создан",
                                             Toast.LENGTH_LONG).show();
                                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                                     startActivity(intent);

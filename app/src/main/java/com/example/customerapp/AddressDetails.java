@@ -77,7 +77,7 @@ public class AddressDetails extends AppCompatActivity {
                 }
                 else
                     Toast.makeText(AddressDetails.this,
-                            "Enter address and latitude, longitude first",
+                            "Введите адрес и широту, долготу",
                             Toast.LENGTH_SHORT).show();
             }
         });
@@ -173,11 +173,11 @@ public class AddressDetails extends AppCompatActivity {
                     public void onResponse(String response) {
                         v.setEnabled(true);
                         if (response.equals("success")) {
-                            Toast.makeText(getApplicationContext(), "Address updated",
+                            Toast.makeText(getApplicationContext(), "Адрес обновлен",
                                     Toast.LENGTH_SHORT).show();
                             finish();
                         } else
-                            Toast.makeText(getApplicationContext(), "Address update failed",
+                            Toast.makeText(getApplicationContext(), "Не удалось обновить адрес",
                                     Toast.LENGTH_SHORT).show();
                     }
                 }, new Response.ErrorListener() {

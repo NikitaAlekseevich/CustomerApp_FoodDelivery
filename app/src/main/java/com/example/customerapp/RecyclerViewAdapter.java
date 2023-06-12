@@ -53,7 +53,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         ListData list = listdata.get(position);
-        holder.textViewTitle.setText(list.getName() + " - $" + list.getPrice());
+        holder.textViewTitle.setText(list.getName() + " - ₽" + list.getPrice());
         holder.textViewDes.setText(list.getDes());
         Picasso.get().load(list.getImg()).into(holder.imageView);
         holder.buttonAdd.setOnClickListener(new View.OnClickListener() {
